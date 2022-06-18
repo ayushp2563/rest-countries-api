@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React ,{useState} from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import RegionPicker from './components/RegionPicker';
+import Country from './components/Country';
 
 function App() {
+  const[selectedRegion,setselectedRegion] = useState(null);
+
+
+  const onRegionPickHandler = (region) => {
+    setselectedRegion(region);
+  };
+
+  const clearselectedRegionHandler = () =>{
+    setselectedRegion(null)
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+
+      {selectedRegion ? 
+       (<Country clearselectedRegionHandler={clearselectedRegionHandler} 
+      selectedRegion={selectedRegion} /> ) :   (<RegionPicker  onRegionPickHandler={onRegionPickHandler}/> )} 
+    </>
   );
-}
+};
 
 export default App;

@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+img {
+  width:300px;
+  height:300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.regionpicker{
+  position: relative;
+  background-color:white;
+  text-align:center;
+  margin:50px;
+  /* border : 3px solid rgba(202, 9, 9, 0.8) ; */
+  transition: all 0.3s ease-in-out;
+  transition: all .3s linear;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.regionpicker.img{
+   display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.overlay{
+  position: absolute;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-family: 'Quicksand',sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.overlay > *{
+ transform: translateY(20px);
+ transition: transform 0.25s;
+}
+
+.overlay:hover{
+  opacity: 1;
+}
+
+.overlay:hover > *{
+  transform: translateY(20px);
+}
+
+
+
+.title{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.desc{
+  font-size: 1.25em;
+  margin-top: 0.25em;
+}
+
+/* .regionpicker:hover + .hide{
+  display: block;
+  color: red;
+} */
+.regionpicker:hover{
+  
+  transform: translate(0,-10px);
+  box-shadow: inset;
+}
+
+/* .progress{
+  margin :10px 0;
+}
+
+
+.regionpicker.tooltiptext{
+  visibility: visible;
+  width: 120px;
+  background-color: rgb(228, 21, 21);
+  color: rgb(14, 221, 35);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  
+  position: absolute;
+  z-index: 1;
+}
+
+.regionpicker:hover .tooltiptext{
+  visibility: visible;
+} */
+
+.regionpicker.neon{
+  font-family: 'Pacifico';
+  /* color: white;
+  animation: neon 5s infinite; */
+  color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09;
+}
+
+h2 {
+  font-size: 1 rem;
+    animation: pulsate 0.11s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  /* 0%,39%,41%,59%,61%,100% {
+    text-shadow: white 0 0 12px,
+    #ff3aad 0 0 24px,
+    #ff3aad 0 0 36px;
+  }
+  40%,60%{
+   text-shadow: none ; 
+  } */
+  100% {
+
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #f09,
+    0 0 80px #f09,
+    0 0 90px #f09,
+    0 0 100px #f09,
+    0 0 150px #f09;
+
+}
+
+0% {
+
+  text-shadow:
+  0 0 4px #fff,
+  0 0 10px #fff,
+  0 0 18px #fff,
+  0 0 38px #f09,
+  0 0 73px #f09,
+  0 0 80px #f09,
+  0 0 94px #f09,
+  0 0 140px #f09;
+
+}
+}
+
+.countriesbg{
+ background:'radial-gradient(circle at top right ,#3a1c71,#d76d77,#ffaf7b)',;
+}
+
+
+.buttonstyle{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
